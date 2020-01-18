@@ -1,0 +1,19 @@
+<main>
+    <div class="top-message">
+        <h1>Welcome to Finding Nemo App - visualized image folder with information useful for you - </h1>
+    </div>
+    <div class="submit-section">
+        <p>Log your fish image and data.</p>
+        <a href="/log" class="btn">Submit</a>
+        <%# <a href="/list" class="btn">CSV_export</a> %>
+    </div>
+    <div class="container-fluid">
+        <div class="item">
+        <% @nemologs.each do |nemolog| %>
+            <a href="/nemolog/<%= nemolog['id'] %>"><img src="/images/<%= nemolog['image'] %>" width="250" height="250" alt="Anenmonefish_image"></a>
+            <%# <label for="delete_input">Delete<input type="text" class="delete" id="delete_input" list="delete" placeholder="delete" name="delete"> %>
+        <% end %>
+        </div>
+    </div>
+
+</main>

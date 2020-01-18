@@ -1,0 +1,1 @@
+{"id"=>"9", "image"=>"EK_nemo3.JPG", "species"=>"Nemo (Amphiprion ocellaris)", "date"=>"2019-11-08", "location"=>"close to cape zampa", "size"=>"3", "depth"=>"2m", "memo"=>""}

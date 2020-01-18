@@ -1,0 +1,22 @@
+<div class="top-message">
+<h1>All your fish data</h1>
+</div>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Species</th>    
+    <th>Location</th>
+    <th>Depth</th>
+    <th>Memo</th>
+  </tr>
+  <% @nemologs.each do |nemolog| %>
+    <tr>
+      <td><%= nemolog['date'] %></td>
+      <td><%= nemolog['species'] %></td>
+      <td><%= nemolog['location'] %></td>
+      <td><%= nemolog['depth'] %></td>
+      <td><%= nemolog['memo'] %></td>
+    </tr>
+  <% end %>
+</table>

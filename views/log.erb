@@ -1,0 +1,54 @@
+<div class="top-message">
+<h1>Log what you found</h1>
+</div>
+<div class="form-wrapper">
+<form action="/post" method="post" enctype="multipart/form-data">
+<div class="form-group">
+<label for="image_form">Upload image</label>
+<input type="file" class="form-control-file" id="image_form" name="image" required>
+</div>
+<div class="form-group">
+<label for="species_input">Species</label>
+<input type="text" class="form-control" id="species_input" list="species" placeholder="species" name="species" required autocomplete="off">
+<datalist id="species">
+<option value="Nemo (Amphiprion ocellaris)">
+<option value="Tomato anemone fish (Amphiprion frenatus)">
+<option value="Clark's anemone fish (Amphiprion clarkii)">
+<option value="Orange anemone fish (Amphiprion sandaracinos)">
+<option value="Saddle anemone fish (Amphiprion polymnus)">
+<option value="Pink anemone fish (Amphiprion perideraion)">
+<option value="Other (Please insert the name of species)">
+</datalist>
+</div>
+<div class="form-group">
+<label for="date_input">Date</label>
+<input type="date" class="form-control" id="date_input" placeholder="date" name="date" required>
+</div>
+<div class="form-group">
+<label for="location_input">GPS cordinates</label>
+<input type="text" class="form-control" id="location_input" placeholder="location" name="location" required>
+</div>
+<div class="form-group">
+<label for="size_input">Population size</label>
+<select name="size" class="form-control" id="size_input" placeholder="size" name="size">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">>4</option>
+<option value="unknown">unknown</option>
+</select>
+</div>
+<div class="form-group">
+<label for="depth_input">Depth</label>
+<input type="text" class="form-control" id="depth_input" placeholder="depth" name="depth">
+</div>
+<div class="form-group">
+<label for="memo_input">Memo</label>
+<textarea class="form-control" id="memo_input" rows="3" name="memo"></textarea>
+</div>
+<div class="log_button">
+<button type="submit" class="btn">Submit your log</button>
+</div>
+</form>
+</div>
+</main>
