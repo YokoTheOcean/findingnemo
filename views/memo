@@ -1,0 +1,4 @@
+index.erb 14-17
+ 
+            <a href="/nemolog/<%= nemolog['id'] %>"><img src="/images/<%= nemolog['image'] %>" width="250" height="250" alt="Anenmonefish_image"></a>
+            <label for="delete_input">Delete<input type="text" class="delete" id="delete_input" list="delete" placeholder="delete" name="delete">

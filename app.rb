@@ -5,19 +5,21 @@ require 'csv'
 
 set :public_folder, 'public'
 
+
+
 enable :sessions
 
 def db 
   PG::connect(
     :host => "localhost",
-    :user => 'yokoshintani',
+    :user => 'yshintani',
     :password => '',
-    :dbname => "Nemoapp"
+    :dbname => "heroku_sinatra_nemo"
   )
 end
 
 get '/index' do
-  sql = "select * from nemolog;"
+  sql = "select * from nemologs;"
   @nemologs = db.exec_params(sql).to_a
   erb :index
 
@@ -40,7 +42,7 @@ post '/post' do
   @depth = params[:depth]
   @memo = params[:memo]
   FileUtils.mv(params[:image][:tempfile], "./public/images/#{params[:image][:filename]}")
-  db.exec("insert into nemolog (image, species, date, location, size, depth, memo) values($1, $2, $3, $4, $5, $6, $7)",[@image, @species, @date, @location, @size, @depth, @memo])
+  db.exec("insert into nemologs (image, species, date, location, size, depth, memo) values($1, $2, $3, $4, $5, $6, $7)",[@image, @species, @date, @location, @size, @depth, @memo])
   redirect '/index'
 end
 
@@ -86,13 +88,13 @@ end
 
 get '/nemolog/:id' do
   id = params[:id]
-  sql = "select * from nemolog where id = #{id};"
-  @nemolog = db.exec_params(sql)[0]
+  sql = "select * from nemologs where id = #{id};"
+  @nemologs = db.exec_params(sql)[0]
   erb :individual
 end
 
 get '/list' do
-  sql = "select * from nemolog;"
+  sql = "select * from nemologs;"
   @nemologs = db.exec_params(sql).to_a
   # binding.irb
   # content_type "text/csv"
